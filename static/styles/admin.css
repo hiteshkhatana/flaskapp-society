@@ -48,14 +48,17 @@ button{
 }
 
 .func{
-	width: 60%;
-	background-color: grey;
+	width: 40%;
+	height: auto;
+	background-color: #ffe4b5;
 	position: absolute;
 	top:100px;
-	bottom: 100px;
+	border : 1px black solid;
+	border-radius: 10px;
 	left: 0;
 	right: 0;
 	margin: auto;
+	padding-bottom: 10px;
 }
 
 #edit{

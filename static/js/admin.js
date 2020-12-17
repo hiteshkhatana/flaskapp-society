@@ -140,16 +140,20 @@ document.getElementById("loan-submit-button").onclick = function(){
 
 
 document.getElementById("join-page").onclick = function(){
+	$("#bg-content").css("filter","blur(2px)");
 	$("#join").show();
 }
 
 document.getElementById("leave-page").onclick = function(){
+	$("#bg-content").css("filter","blur(2px)");
 	$("#leave").show();
 }
 document.getElementById("paid-page").onclick = function(){
+	$("#bg-content").css("filter","blur(2px)");
 	$("#paid").show();
 }
 document.getElementById("loan-page").onclick = function(){
+	$("#bg-content").css("filter","blur(2px)");
 	$("#loan").show();
 }
 
@@ -157,16 +161,20 @@ document.getElementById("loan-page").onclick = function(){
 
 document.getElementById("join-close-button").onclick = function(){
 	$("#join").hide();
+	$("#bg-content").css("filter","none");
 }
 
 document.getElementById("leave-close-button").onclick = function(){
 	$("#leave").hide();
+	$("#bg-content").css("filter","none");
 }
 document.getElementById("paid-close-button").onclick = function(){
 	$("#paid").hide();
+	$("#bg-content").css("filter","none");
 }
 document.getElementById("loan-close-button").onclick = function(){
 	$("#loan").hide();
+	$("#bg-content").css("filter","none");
 }
 
 

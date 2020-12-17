@@ -57,11 +57,13 @@ function options_for_selection() {
 }
 
 document.getElementById("admin-page").onclick=function(){
+	$("#bg-content").css("filter","blur(2px)");
 	$("#login-control").show();
 }
 
 document.getElementById("close-button").onclick = function(){
 	$("#login-control").hide();
+	$("#bg-content").css("filter","none");
 }
 
 
