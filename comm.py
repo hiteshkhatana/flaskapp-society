@@ -3,10 +3,16 @@ import warnings
 import mysql.connector
 warnings.filterwarnings("ignore")
 
+
+# Table Names - complete , monthly_interest , interest_shared
+
+
+
+
+#Prepare function connects with the database and initialise current month previous month and next month for further use in the classes Check and update.
 class Prepare:
 	def __init__(self):
-		self.db = mysql.connector.connect(host="us-cdbr-east-02.cleardb.com",user="b493015757bb60",password="161ce573",database = "heroku_1d4de87686e22e0")
-		# self.db = mysql.connector.connect(host="localhost",user="root",password="hitesh1454",database = "commitee")		
+		self.db = mysql.connector.connect(host="",user="",password="",database = "")	
 		self.cur = self.db.cursor(buffered = True)
 
 		date = datetime.now()
@@ -25,25 +31,26 @@ class Prepare:
 			self.prev_month = f"{int(self.month)-1}/{self.year}"
 
 
-
+# Check class inherits Prepare function to use cursor and dates.
 class Check(Prepare):
 	def __init__(self ):
 		super().__init__()
-
+	# Returns all months record in the form of a list for a particular name passed in the function.
 	def individual(self , name):
-		#checking individual record 
 		self.cur.execute("SELECT ID,NAME,CD,INSTALLMENT,INTEREST,TOTAL,BAL,MONTH FROM complete WHERE NAME = %s" , (name,))
 		values = self.cur.fetchall()
 		res = list(values)
 		return res
-
+	
+	# Return list of all unique names present in the record to pass it to the select tag in HTML 
 	def all_names(self):
 		self.cur.execute("SELECT DISTINCT(NAME) FROM complete")
 		res = []
 		for i in self.cur:
 			res.append(i)
 		return res
-
+	
+	# Returns all unique months in list format.
 	def all_months(self):
 		self.cur.execute("SELECT DISTINCT(MONTH) FROM complete")
 		res = []
@@ -51,14 +58,15 @@ class Check(Prepare):
 			res.append(i)
 		return res
 
+	# returns the complete record of a particular month.
 	def complete(self, month):
-		#printing complete data
 		self.cur.execute("SELECT ID,NAME,CD,INSTALLMENT,INTEREST,TOTAL,BAL,MONTH FROM complete WHERE MONTH = %s",(month,))
 		res = []
 		for i in self.cur:
 			res.append(list(i))
 		return res
 
+	# returns list of names with interest collected and a flag whether the interest is given or not.
 	def show_interest_per_person(self):
 		Update()
 		self.cur.execute("SELECT NAME,INTEREST,PAID FROM interest_shared")
@@ -67,16 +75,16 @@ class Check(Prepare):
 			res.append(list(i))
 		return res
 
+	# returns the updates of the passed month
 	def monthly_updates(self,month):
 		self.cur.execute("SELECT INTEREST,IN_HAND,MEMBERS FROM monthly_interest WHERE MONTH = %s",(month,))
-		shared = self.cur.fetchall()
+		shared = self.cur.fetchone()
 		self.cur.execute("SELECT SUM(BAL) FROM complete WHERE MONTH = %s",(month,))
 		bal = self.cur.fetchone()
 		if shared == None or shared == []:
 			return None
 		else:
-			print(month,shared[0][0],bal[0],shared[0][1],shared[0][2])
-			return [month,shared[0][0],float(bal[0]),shared[0][1],shared[0][2]]
+			return [month,shared[0],float(bal[0]),shared[1],shared[2]]
 
 
 class Update(Prepare):
@@ -162,7 +170,7 @@ class Update(Prepare):
 		self.cur.execute("UPDATE monthly_interest SET IN_HAND = IN_HAND-(%s-%s) WHERE MONTH = %s",(ans[0],installment_given,self.cur_month) )
 		self.db.commit()
 
-
+	# Manually Edit the record of a particular person 
 	def mannual(self,i_d,name,cd,installment,interest,total,loan,month):
 		self.cur.execute("UPDATE complete SET ID = %s, CD = %s,INSTALLMENT = %s,INTEREST = %s,TOTAL = %s,BAL = %s WHERE NAME = %s AND MONTH = %s" , (i_d,cd,installment,interest,total,loan,name,month))
 
@@ -219,7 +227,7 @@ class Update(Prepare):
 		
 		
 
-
+# 	calculates cash in hand of the current month
 	def cash_in_hand(self):
 		self.cur.execute("SELECT SUM(INTEREST) FROM interest_shared WHERE PAID = %s",(self.cur_month,))
 		shared = self.cur.fetchone()
