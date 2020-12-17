@@ -5,7 +5,10 @@ warnings.filterwarnings("ignore")
 
 
 # Table Names - complete , monthly_interest , interest_shared
-
+# attributes
+# complete - ID , NAME , CD , INSTALLMENT , INTEREST , TOTAL , BAL , MONTH
+# monthly_interest - MONTH , INTEREST , MEMBERS , C_IN_HAND , LOAN_GIVEN
+# interest_shared - NAME , INTEREST , PAID , MONTH
 
 
 
