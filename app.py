@@ -1,6 +1,5 @@
 from flask import Flask, request, jsonify ,render_template,request,redirect,url_for
 from comm import Prepare , Check , Update
-import json
 
 
 app = Flask(__name__)
