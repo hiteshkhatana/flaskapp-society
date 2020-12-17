@@ -46,7 +46,7 @@ def month_data():
 def admin_page():
 	user = request.form["username"]
 	paswd = request.form["password"]
-	if user == "ramniwas" and paswd == "1454":
+	if #username and password Authentication succeeds:
 		return render_template("admin.html")
 	else:
 		return render_template("dashboard.html",msg = "failed!! You have entered wrong username and password")
