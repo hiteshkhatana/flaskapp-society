@@ -24,10 +24,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'i6up@9!s=4@!(i!z^a_&%x_@9+@rk_ihy(k0sq!ca!-!n6f8-g'
+SECRET_KEY = ***************************************************
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = FALSE
 
 ALLOWED_HOSTS = []
 
@@ -88,9 +88,9 @@ DATABASES = {
         # 'ENGINE': 'django.db.backends.sqlite3',
         # 'NAME': BASE_DIR / 'db.sqlite3',
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME' : "d8e5b6ove0f35g",
-        'USER' :  "toayjzgvjgwste",
-        'PASSWORD':"1874249823f7a9f60ccf83735f77bc7cd9fcdddae13685c6baf5fa46ee933ff8",
+        'NAME' : **********,
+        'USER' :  ***********,
+        'PASSWORD':*****************************************,
         'HOST' : "ec2-34-196-34-158.compute-1.amazonaws.com",
         'PORT' : "5432",
 
@@ -151,6 +151,6 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'khatanasociety@gmail.com'
-EMAIL_HOST_PASSWORD = 'hitesh@2208'
+EMAIL_HOST_USER = ***************
+EMAIL_HOST_PASSWORD = **************
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
