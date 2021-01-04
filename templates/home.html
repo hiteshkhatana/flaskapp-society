@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<center class = "underline-text"><h1 class = "container-fluid bg-light text-dark" id = "home-heading" >Khatana Society</h1></center>
+
+<div id = "complete-content">
+
+
+<div id = welcome-block>
+	<center>
+<img class = "admin-image"  src="static/admin.jpg">
+<br>
+<br>
+<span>&#128591; WELCOME TO OUR SOCIETY</span>
+</center>
+</div>
+
+
+<div id = login-form>
+	<div class = "container-fluid bg-primary" id = login-form-head>
+		Log In
+	</div>
+	<div id = login-form-body>
+
+	<div id = "login-fail-message">
+		{% for message in messages %}
+		{{message}}
+		{% endfor %}
+	</div>
+	<!-- <a href="/memberpage">Member</a> or <a href="/adminpage">Admin</a> -->
+	<form action="" method="POST">{% csrf_token %}
+
+	{{member_form.as_p}}
+	<input type="submit" id = "login-button"class = "btn btn-success btn-lg" value="Login" />
+
+	</form>
+
+	</div>
+
+</div>
+
+</div>
+
+{% endblock content %}

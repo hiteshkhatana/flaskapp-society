@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Khatana Society</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+
+      <li class="nav-item active">
+        <a class="nav-link" href="#"><span class="sr-only"></span></a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="/resetpassword">Reset password</a>
+      </li>
+
+    </ul>
+
+    <div class="my-2 my-lg-0">
+    	<span>{{request.user}} - </span>&nbsp;
+    	<a href="/logout"><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button></a>
+    </div>
+  
+  </div>
+</nav>
+
+
+
+
+
+
+	
+	<br>
+	<br>
+
+	<center><h1 class = "container" id = "member-title">Record of <b id = "user-name">{{user}}</b></h1></center>
+
+	<br>
+	<div id = "content-block">
+
+		<div id = "left-block">
+			<div id = "next-pay">Payment for next month : <b>{{nextpay}}</b></div>
+			<!-- <br> -->
+			<!-- <div>Total CD collected : <b>{{totalcd}}</b></div> -->
+			<br>
+			{% if loan_end == None %}
+
+				<div><b>You have no Loan</b></div>
+
+				{% else %}
+
+				<div>Your Loan will end in <b>{{loan_end}}</b></div>
+
+			{% endif %}
+
+		</div>
+
+		<div id = "right-block">
+			<table class = "table container" id = "record-table">
+				<thead>
+					<tr>
+						<th>
+							NAME
+						</th>
+						<th>
+							CD
+						</th>
+						<th>
+							INSTALLMENT
+						</th>
+						<th>
+							INTEREST
+						</th>
+						<th>
+							TOTAL
+						</th>
+						<th>
+							LOAN BAL
+						</th>
+						<th>
+							MONTH
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for element in objectlist %}
+					<tr>
+						<td>
+							{{element.name}}
+						</td>
+						<td>
+							{{element.cd}}
+						</td>
+						<td>
+							{{element.installment}}
+						</td>
+						<td>
+							{{element.interest}}
+						</td>
+						<td>
+							{{element.total}}
+						</td>
+						<td>
+							{{element.loan_bal}}
+						</td>
+						<td>
+							{{element.month}}
+						</td>
+					</tr>
+					{% endfor %}
+				</tbody>
+				
+			</table>
+		</div>
+
+	</div>
+
+
+
+{% endblock content %}

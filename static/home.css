@@ -1,0 +1,125 @@
+
+h1{
+	color: black;
+}
+
+body{
+	background-color: #E6E6FA; /* #AFEEEE;*/
+	font-family: "Sans-serif";
+}
+
+.underline-text{
+	text-decoration: underline;
+}
+
+
+#home-heading{
+	margin-top: 0px;
+	font-size: 60px;
+
+	font-family: cursive;
+}
+
+
+#complete-content{
+	margin-top: 50px;
+	display: flex;
+}
+
+#welcome-block{
+	flex : 50%;
+}
+
+.admin-image{
+	width: 250px;
+	height: 250px;
+	border-radius: 250px;
+	margin-top: 80px;
+	border: 2px white solid;
+	box-shadow: 5px 5px 8px;
+}
+
+#login-form{
+	font-size: 22px;
+	float: right;
+	margin-right: 200px;
+	margin-top: 60px;
+	background-color: white;
+	
+	text-align: center;
+	border-radius: 10px;
+	box-shadow: 10px 15px 8px;
+}
+
+#login-form-body{
+	padding: 20px;
+	padding-bottom: 50px;
+
+}
+
+#login-form-head{
+	font-size: 40px;
+	font-family: cursive;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+}
+
+#login-fail-message{
+	margin-left: 130px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	background-color: white;
+	font-size: 12px;
+
+}
+
+@media screen and (max-width: 420px){
+
+	#home-heading{
+		font-size: 25px;
+	}
+
+	#complete-content{
+		display: block;
+	}
+
+	.admin-image{
+	margin-top: 10px;
+	width: 150px;
+	height: 150px;
+	border-radius: 100px;
+	border: 2px white solid;
+	box-shadow: 5px 5px 8px;
+	}
+
+	#login-form{
+		font-size: 14px;
+		margin-top: 30px;
+		margin-right: 10%;
+	}
+
+	#login-form-head{
+		font-size:30px;
+	}
+
+#login-form-body{
+	padding: 5px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 10px;
+
+}
+
+#login-fail-message{
+	margin-left: 80px;
+	margin-bottom: 5px;
+	margin-top: 5px;
+	background-color: white;
+	font-size: 10px;
+
+}
+
+
+
+
+}

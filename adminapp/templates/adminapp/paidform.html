@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% include 'head-nav.html' %}
+
+<br>
+<br>
+
+<center><h1 class = "container" id = "admin-title"><b>Paid form</b></h1></center>
+<br>
+<br>
+
+<hr>
+<center>
+	
+	<form class = "my-forms" method="POST">{% csrf_token %}
+	{{form.as_p}}
+	<datalist id = "namelist">
+		{% for op in names %}
+			<option value =  "{{op}}">
+		{% endfor %}
+	</datalist>
+	<input type="submit" class = "btn btn-danger" name="submit" value = "Submit" />
+	<br>
+	{% for message in messages %}
+	{{message}}
+	{% endfor %}
+	</form>
+
+
+</center>
+<br>
+<hr>
+
+
+
+
+{% endblock %}

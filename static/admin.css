@@ -1,0 +1,109 @@
+#admin-title{
+	color:#556B2F;
+	border: 1px black solid;
+	border-bottom-width: 5px;
+	
+}
+
+.custom-select{
+	width: 200px;
+}
+
+
+#content-block{
+	margin-top: 10px;
+	display: flex;
+
+}
+
+#admin-left-block{
+	width: 15%;
+	height: 500px;
+	margin-left: 80px;
+	font-size: 22px;
+	padding-top:30px;
+	padding-bottom:30px;
+	padding-left:15px;
+	padding-right:15px;
+	border-radius: 10px;
+	background-color: #008B8B;
+}
+
+#extra-info{
+	font-size: 15px;
+}
+
+#admin-right-block{
+	margin-left: 150px;
+}
+
+td{
+	border:1px black solid;
+}
+
+
+.action-buttons{
+	margin-top: 5px;
+}
+
+.my-forms{
+	font-size: 22px;
+}
+
+@media screen and (max-width: 420px){
+
+
+	#admin-title{
+	border: 1px black solid;
+	border-bottom-width: 5px;
+	font-size: 30px;
+	margin-top: -30px;
+}
+
+	#admin-left-block{
+	width: 350px;
+	height:60px;
+	font-size: 13px;
+	position: absolute;
+	margin-top: -50px;
+	margin-left: 10px;
+	padding: 0px;
+	display: inline-flex;
+}
+
+.action-buttons{
+	font-size: 8px;
+	margin-left: 5px;
+	margin-top: 15px;
+	border:1px black solid;
+	}
+
+
+	#admin-right-block{
+	font-size: 7px;
+	margin-top: 130px;
+	margin-left: 0px;
+}
+
+#select-month-section{
+	position: absolute;
+	margin-top: 113px;
+	margin-left: 30px;
+}
+
+.my-forms{
+	font-size: 18px;
+}
+
+#extra-info{
+	font-size: 8px;
+	position: absolute;
+	margin-left: 0px;
+	display: inline-flex;
+	width: 350px;
+	height: 40px;
+	margin-top: 70px;
+}
+
+
+}

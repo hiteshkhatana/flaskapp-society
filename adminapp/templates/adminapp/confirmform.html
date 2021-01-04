@@ -1,0 +1,9 @@
+<center>
+
+	<form class = "my-forms" method="POST">{% csrf_token %}
+		Total CD from {{name}} : <b> {{cd}}</b> <br><br>
+	Are you sure you want to remove {{name}} :<br><br>
+	<p><input type="submit" class = "btn btn-danger" name="submit2" value = "Yes"> <input type="submit" class = "btn btn-danger" name="submit2" value = "No"></p>
+	</form>
+
+</center>
