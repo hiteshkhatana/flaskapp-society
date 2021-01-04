@@ -1,4 +1,4 @@
-# flaskapp-society
+# khatana-society
 
 Link - https://khatana-society.herokuapp.com/
 
