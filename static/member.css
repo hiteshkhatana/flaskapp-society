@@ -1,0 +1,88 @@
+
+#member-title{
+	border: 1px black solid;
+	border-bottom-width: 5px;
+}
+
+#content-block{
+	margin-top: 80px;
+	display: flex;
+
+}
+
+#left-block{
+	width: 28%;
+	margin-left: 80px;
+	font-size: 22px;
+	padding: 20px;
+	border: 1px black solid;
+	background-color: #48D1CC ;
+}
+
+#right-block{
+	margin-left: 100px;
+}
+
+
+
+#next-pay{
+	background-color: #008B8B;
+	 padding : 5px;
+}
+
+
+td{
+	border:1px black solid;
+}
+
+#record-table thead{
+	background-color: #2F4F4F;
+	 color: white;
+}
+
+#otp-input{
+	width:100px; 
+}
+
+
+@media screen and (max-width: 420px){
+
+
+	#member-title{
+	border: 1px black solid;
+	border-bottom-width: 5px;
+	font-size: 30px;
+	margin-top: -30px;
+}
+
+#left-block{
+	width: 320px;
+	height:60px;
+	font-size: 12px;
+	position: absolute;
+	margin-top: -30px;
+	margin-left: 5px;
+	padding: 0px;
+	display: inline-flex;
+}
+
+#right-block{
+	font-size: 7px;
+	margin-top: 40px;
+	margin-left: 0px;
+}
+
+
+#next-pay{
+	background-color: #48D1CC ;
+	padding: 0;
+}
+
+#left-block div{
+	border-right: 1px black solid;
+	margin: 5px;
+
+	}
+
+
+}

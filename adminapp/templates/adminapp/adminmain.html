@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% include 'head-nav.html'%}
+
+<br>
+<br>
+
+<center><h1 class = "container" id = "admin-title"><b>Admin</b></h1></center>
+
+<br>
+
+<center>
+	<div id = "select-month-section">
+<form method="POST">{% csrf_token %}
+<select name="month_options" class = "custom-select">
+	<option class="dropdown-item" selected>{{selected}}</option>
+	<option disabled="disabled">-----------------------------</option>
+	{% for op in options %}
+
+	<option class="dropdown-item">{{op}}</option>
+
+	{% endfor %}
+</select>
+<input class = "btn btn-primary dropdown-toggle" type="submit" name="submit" value="Show">
+</form>
+</div>
+<br>
+</center>
+
+<div id = "content-block">
+
+		<div id = "admin-left-block">
+			<a href="/joinform"><button class = "btn container-fluid action-buttons">Join</button></a>
+			<br>
+			<a href="/remove"><button class = "btn container-fluid action-buttons">Remove</button></a>		
+			<br>
+			<a href="/loanform"><button class = "btn container-fluid action-buttons">Loan</button></a>
+			<br>
+			<a href="/paidform"><button class = "btn btn-default container-fluid action-buttons">Paid</button></a>
+			<br>
+			<a href="/admin/members/members/"><button class = "btn btn-default container-fluid action-buttons">Manual Edit</button></a>
+			<a href="/printlayout"><button class = "btn btn-default container-fluid action-buttons">Print layout</button></a>
+			<br>
+			<br>
+			{% if cd == None %}
+
+			{% else %}
+			<div id = "extra-info" style="background-color: white ; padding: 3px;">
+			<div style="background-color: #2F4F4F ;  padding : 3px; ; color : white">{{tot_interest}}</div>
+			<div>{{cd}}</div>
+			<div>{{install}}</div>
+			<div>{{interest}}</div>
+			<div>{{total}}</div>
+			<div>{{bal}}</div>
+			</div>
+
+			{% endif %}
+		</div>
+
+		<div id = "admin-right-block">
+			<table class = "table container" id = "record-table">
+				<thead style="background-color: #2F4F4F; color: white">
+					<tr>
+						<th>
+							NAME
+						</th>
+						<th>
+							CD
+						</th>
+						<th>
+							INSTALLMENT
+						</th>
+						<th>
+							INTEREST
+						</th>
+						<th>
+							TOTAL
+						</th>
+						<th>
+							LOAN BAL
+						</th>
+						<th>
+							MONTH
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for element in data %}
+					<tr>
+						<td>
+							{{element.name}}
+						</td>
+						<td>
+							{{element.cd}}
+						</td>
+						<td>
+							{{element.installment}}
+						</td>
+						<td>
+							{{element.interest}}
+						</td>
+						<td>
+							{{element.total}}
+						</td>
+						<td>
+							{{element.loan_bal}}
+						</td>
+						<td>
+							{{element.month}}
+						</td>
+					</tr>
+					{% endfor %}
+				</tbody>
+				
+			</table>
+		</div>
+
+	</div>
+
+
+{% endblock content %}

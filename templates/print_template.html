@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<center><a href="/"><button class="btn">Back</button></a>
+<br>
+<table id = "print-layout">
+	<thead>
+		<tr>
+			<th>
+				NAME
+			</th>
+			<th>
+				CD
+			</th>
+			<th>
+				INSTALLMENT
+			</th>
+			<th>
+				INTEREST
+			</th>
+			<th>
+				TOTAL
+			</th>
+			<th>
+				LOAN BAL
+			</th>
+			<th>
+				MONTH
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for element in data %}
+		<tr>
+			<td>
+				{{element.name}}
+			</td>
+			<td>
+				{{element.cd}}
+			</td>
+			<td>
+				{{element.installment}}
+			</td>
+			<td>
+				{{element.interest}}
+			</td>
+			<td>
+				{{element.total}}
+			</td>
+			<td>
+				{{element.loan_bal}}
+			</td>
+			<td>
+				{{element.month}}
+			</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+	
+</table>
+</center>
+<br>
+
+{% endblock %}
